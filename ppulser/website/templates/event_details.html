@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles/loginPage.css" rel="stylesheet">
+
+    <link href="../static/styles/events_home.css" rel="stylesheet" >
+    <link href="../static/styles/events_home(1).css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <title>Event Details - {{ event.event_name }} </title>
+</head>
+
+<body>
+    <div class="login-container"
+        <section> 
+            <div class="header-menu" > 
+                <i class="fa-solid fa-xmark" onclick="window.history.back()"> </i>    
+            </div>
+        </section>
+
+        <section class="subheading"> 
+
+            <div style= "background-image: url('https://media.istockphoto.com/id/1053940970/photo/empty-nightclub-dance-floor.jpg?s=612x612&w=0&k=20&c=p29ZA5C9YN7d-iyiK7yEOWbCTe5xy9TEVD8pxCbdMEk=');
+                height: 200px;
+                width: 100%;
+                border: 1px solid rgb(6, 0, 0);
+                background-size: cover;">
+
+
+            </div>
+        </section>
+
+        <section>
+            <div class="flexbox-col">
+            
+                <input type="button" name="menu1" class="menu-filled" id="menu1" value="Nearby">
+                <input type="button" name="menu2" class="menu-filled" id="menu2" value="Nightclubs">
+                <input type="button" name="menu3" class="menu-filled" id="menu3" value="Low Cost">
+                <input type="button" name="menu4" class="menu-filled" id="menu4" value="High Cost">
+            
+            </div>
+        
+        </section>
+        <section>
+            <div class="box" style="border:none; border-right: none;">
+                <legend class="section-legend">{{ event.event_name }}</legend>
+                <br/>
+                <div class="code-container" style="justify-content: flex-start;">
+                    <div style="text-align:start;">
+                    <i class="fa-regular fa-calendar-days" style="color: #ff0a9d;"></i>
+                </div>
+                    <div>
+                        <p><span style="font-size: 1.5em;";>{{ event.event_date }}</span><br/>
+                        {{ event.start_time }} - {{ event.end_time }}<br/>
+                        <small>Times are displayed in your local time zone</small></p>
+                    </div>
+                </div>
+
+                <div class="code-container" style="justify-content: flex-start;">
+                    <div style="text-align:start;">
+                    <i class="fa-solid fa-location-crosshairs" style="color: #ff0a9d;"></i>
+                </div>
+                    <div>
+                        <p><span>{{ event.venue}}</span><br/>
+                    </div>
+                </div>
+
+
+                <div class="code-container" style="justify-content: flex-start;">
+                    <div style="text-align:start;">
+                        <i class="fa-solid fa-money-bill" style="color: #ff0a9d;"></i>
+                    </div>
+                    <div>
+
+                        {% if event.entry_fees == "0" %}
+                            <p><span style="font-size: 1.5em;">Free</span></p>
+                            
+                        {% else %}
+                        <p><span style="font-size: 1.5em;">$ {{ event.entry_fees }}</span></p>
+                            
+                        {% endif %}
+
+                    </div>
+                 </div>
+            </div>
+
+        </section>
+
+        <section class="subheading">
+            <div class="code-container" style="justify-content: flex-start;">
+                <div style="text-align:start;">
+                    People Going to Event: 
+                </div>
+                <div>
+                        <label>&emsp;<span id="count" style="color:rgb(8, 240, 240); font-size:larger;font-weight:600;">12</span></label>
+                </div>
+             </div>
+    
+        
+        </section>
+
+        <section class="subheading">
+            <div class="left-container">
+                <p>&emsp; {{ event.description }}</p>
+            </div>
+        </section>  
+
+        <section class="subheading">
+            
+            <button type="button" class=" login-btn filled-btn" id="attend-btn" name="attend-btn">Attend</button>
+            
+        </section>
+
+       
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const attendBtn = document.getElementById('attend-btn');
+        const countLabel = document.getElementById('count');
+        let count = 12;
+        
+        attendBtn.addEventListener('click', () => {
+            // Toggle the button text
+            if (attendBtn.textContent === 'Attend') {
+                attendBtn.textContent = 'Attending';
+                count++;
+            } else {
+                attendBtn.textContent = 'Attend';
+                count--;
+            }
+            countLabel.textContent = count;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginPage.css">
+    <title>Add Profile Picture</title>
+    
+</head>
+<body>
+    <div class="login-container left-container"
+        <section>
+            <article>
+                <h3 class="code_label subheading">Add Profile Picture</h3>
+            </article>
+        </section>
+       <section>
+        <form method="post" enctype="multipart/form-data" action='/upload_profile_pic'>
+          <div id="profile-pic-container">
+            <img src="" alt="     " id="profile-pic">
+          </div>
+          <div class="fixed-bottom">
+            <label id="upload-image-label" for="profile-pic-input">
+                <input type="file" accept="image/*" id="profile-pic-input" name="profile-pic-input">
+                Upload Profile Picture
+            </label>
+            <div class="code-container">
+                <button type="submit" id="upload-pic-continue" name="upload-pic-continue" class="login-btn half-btn filled-btn">Continue</button>
+                <button type="button" id="upload-pic-skip"class="login-btn half-btn filled-btn">Skip</button>
+            </div>
+
+          </div>   
+
+        </form>
+        </section>
+
+    <script>
+
+        const profilePicInput = document.getElementById('profile-pic-input');
+        const profilePicContainer = document.getElementById('profile-pic-container');
+        const profilePic = document.getElementById('profile-pic');
+
+        profilePicInput.addEventListener('change', (e) => {
+        const file = profilePicInput.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const imageData = event.target.result;
+            profilePic.src = imageData;
+            profilePicContainer.style.backgroundImage = `url(${imageData})`;
+        };
+        reader.readAsDataURL(file);
+        });
+
+    </script>
+
+</body>
+</html>

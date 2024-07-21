@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="loginPage.css" rel="stylesheet">
+    <title>Enter Password</title>
+</head>
+<body>
+    
+        <div class="login-container left-container"
+            <section>
+                <article>
+                    <h3 class="code_label">Get notified about cool events nearby</h3>
+                    <p>You can change these settings later</p>
+                </article>
+            </section>
+            <section>
+                <form action="" >
+      
+                    <h3 class="subheading">Subheading</h3>
+                    <input id="value1" class="password-rules" type="checkbox" class="event-notification" name="event-notification" value="value1"/><label for="value1"> Event Type 1 </label> <br/>
+                    <input id="value2" class="password-rules" type="checkbox" class="event-notification" name="event-notification" value="value2"/> <label for="value2">Event Type 2 </label><br/>
+                    <input id="value3" class="password-rules" type="checkbox" class="event-notification" name="event-notification" value="value3"/><label for="value3"> Event Type 3</label><br/>
+                    <input id="value4" class="password-rules" type="checkbox" class="event-notification" name="event-notification" value="value4"/><label for="value4"> Event Type 4 </label> <br/>
+                    <input id="value5" class="password-rules" type="checkbox" class="event-notification" name="event-notification" value="value5"/> <label for="value5">Event Type 5 </label><br/>
+
+                    <div class="btn-container">    
+                      <button id="later-btn" class="login-btn apple half-btn">Later</button>  
+                      <button id="turn-on-btn" class="login-btn gmail half-btn">Turn On</button>  
+                    </div>
+                 </form>
+             </section>
+
+        </div>
+
+        <script>
+            document.getElementById("turn-on-btn").addEventListener("click", () => {
+              alert("App Name would like to send you notifications. Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.  Allow ? Don't Allow?");
+            });
+          </script>
+</body>
+</html>

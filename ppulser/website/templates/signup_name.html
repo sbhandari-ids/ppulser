@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles/loginPage.css" rel="stylesheet">
+    <link href="../static/styles/footer.css" rel="stylesheet">/
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Sign Up - Name</title>
+    
+</head>
+<body>
+
+    <div class="login-container">
+        <section> 
+            <div class="header-menu" > 
+                <i class="fa-solid fa-xmark" onclick="window.history.back()"> </i>    
+            </div>
+        </section>
+        <section class="subheading left-container">
+            <div style="margin-top: 5vh;">
+                <h2>Create an Account </h2>
+            </div>
+            <form method="post">
+                <label style="font-size: larger;" for="name">Enter in your name to create an account</label>
+                <input type="text" name="name" id="name" class="full-input">
+                <button class="login-btn filled-btn" type="submit">Continue</button>
+                <p">By continuing, you have read and agree to our <a href="#" style="color:rgb(8, 240, 240); font-weight:600;">Terms and Conditions</a> and <a href="#" style="color:rgb(8, 240, 240); font-weight:600;">Privacy Policy</a></p>
+            </form>
+        </section>
+        <section>
+            <div class="or-divider">&nbsp; OR &nbsp; </div>
+        </section>
+        <section>
+
+            <button class="login-btn gmail">Continue with Google</button>
+            <button class="login-btn apple">Continue with Apple</button>
+        </section>
+        <section>
+            <p class="fixed-bottom"> Already have an account? <a href="../login" style="color:rgb(8, 240, 240); font-weight:600;">Sign in here</a></p>
+        </section>
+        
+    </div>
+</body>
+</html>

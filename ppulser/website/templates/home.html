@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles/events_home.css" rel="stylesheet">
+    <link href="../static/styles/events_home(1).css" rel="stylesheet" >
+    <!-- <link href="footer.css" rel="stylesheet"> -->
+    <!-- <link href="../static/styles/loginPage.css" rel="stylesheet"> -->
+    <!-- <link href="../static/styles/events_home.css" rel="stylesheet">
+    <link href="../static/styles/events_home(1).css" rel="stylesheet" > -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   
+    <title> Events Home</title>
+</head>
+
+<body>
+    <div class="login-container"
+            <section> 
+                <div class=" flexbox-col">
+                <!-- <h4> Hi {{ user.username }}! </h4> -->
+                <h4> Hi {{ user.username.split(' ')[0] }} ! </h4>
+                <a href="./logout"><p href=""> <i class="fa-regular fa-user"></i></p></a>
+                </div>
+                <div class="left-text">
+                    <input type="text" class="full-input" placeholder="What do you feel like doing?" >
+                </div>
+                
+
+            </section>
+
+            <section>
+                    <div class="flexbox-col">
+                    
+                        <a href="http://127.0.0.1:5000/event/free"><input type="button" name="menu1" class="menu" id="menu1" value="Free"></a>
+                        <a href="http://127.0.0.1:5000/event/upcoming"><input type="button" name="menu2" class="menu" id="menu2" value="Upcoming"></a>
+                        <a href="http://127.0.0.1:5000/event/nearby"><input type="button" name="menu3" class="menu" id="menu3" value="Nearby"></a>
+                        <a href="http://127.0.0.1:5000/event/nightclubs"><input type="button" name="menu4" class="menu" id="menu4" value="Nightclubs"></a>
+                   
+                    </div>
+                
+                </section>
+            <section>
+                    <div class="flexbox-col">
+                        <p class="section-legend">Popular</p>
+                        <a href="./event/popular" style="text-decoration: none;">
+                            <p class="right-legend" type="button" style="font-size: small;"> See All  <i class="fa-solid fa-chevron-right"></i></p>
+                        </a>
+                    </div>
+                    <div class="flexbox-col">
+                        <a class="box event-display " href="http://127.0.0.1:5000/event/{{ events[0].id }}" style="background-image: url('https://media.istockphoto.com/id/1053940970/photo/empty-nightclub-dance-floor.jpg?s=612x612&w=0&k=20&c=p29ZA5C9YN7d-iyiK7yEOWbCTe5xy9TEVD8pxCbdMEk='); background-size:cover; text-align: center; ">{{ events[0].event_name}}</a>
+                        <a class="box event-display" href="http://127.0.0.1:5000/event/{{ events[1].id }}" style="background-image: url('https://t4.ftcdn.net/jpg/00/58/92/25/360_F_58922552_l2tvyZbVgE0iiPirSa8DXsSejznxoRfQ.jpg'); background-size:cover; text-align: center;">{{ events[1].event_name}}</a>
+                    </div>     
+                </section>
+
+                <section>
+                    <div class="flexbox-col">
+                        <p class="section-legend">Recommended</p>
+                        <a href="./event/recommended" style="text-decoration: none;">
+                            <p class="right-legend" type="button" style="font-size: small;"> See All  <i class="fa-solid fa-chevron-right"></i></p>
+                        </a>
+                    </div>
+                    <div class="flexbox-col">
+                        <a class="box event-display" href="http://127.0.0.1:5000/event/{{ events[2].id }}" style="background-image: url('https://media.istockphoto.com/id/521651569/photo/nightclub-with-colorful-lights.jpg?s=612x612&w=0&k=20&c=mF7E4Q4y47CAjHkjOqgRqWoRJXhcYdXuIQQlDQ23c-c='); background-size:cover; text-align: center;">{{ events[2].event_name}}</a>
+                        <a class="box event-display" href="http://127.0.0.1:5000/event/{{ events[3].id }}" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDOAqCLndSRM9HCufpFHnL9-kgItOcQ1_Khw&s'); background-size:cover; text-align: center;">{{ events[3].event_name}}</a>
+                    </div>     
+                </section>
+
+                <section>
+                    <div class="flexbox-col">
+                        <p class="section-legend">Trending</p>
+                        <a href="./event/trending" style="text-decoration: none;">
+                            <p class="right-legend" type="button" style="font-size: small;"> See All  <i class="fa-solid fa-chevron-right"></i></p>
+                        </a>
+                    </div>
+                    <div class="flexbox-col">
+                        <a class="box event-display" href="http://127.0.0.1:5000/event/{{ events[4].id }}" style="background-image: url('https://static01.nyt.com/images/2018/02/08/fashion/01boite1/01boite1-articleLarge.jpg?quality=75&auto=webp&disable=upscale'); background-size:cover; text-align: center;">{{ events[4].event_name}}</a>
+                        <a class="box event-display" href="http://127.0.0.1:5000/event/{{ events[5].id }}" style="background-image: url('https://imageio.forbes.com/specials-images/imageserve/5d3a3554f1176b000897ad5c/Pyramid-party-at-Amnesia-/960x0.jpg?format=jpg&width=960'); background-size:cover; text-align: center;">{{ events[5].event_name}}</a>
+                    </div>     
+                </section>
+
+            </section>
+            <section>
+                <footer>
+                    <div class="footer-menu">
+                        <a href="#home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <a href="#favorite">
+                            <i class="fas fa-star"></i>
+                        </a>
+                        <a href="#gift">
+                            <i class="fas fa-gift"></i>
+                        </a>
+                        <a href="#heart">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                </footer>
+            </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
